@@ -1,0 +1,107 @@
+<!Doctype html>
+<html lang="pt-br">
+    <head>
+        <title>StartPage</title>
+        <meta charset="utf-8">
+        <link rel="icon" href="./images/favicon.ico">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+        <meta name="description" content="Custom start page with some links">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="site.css">
+        <link rel="manifest" href="manifest.json">
+        <meta name="theme-color" content="#23233c" />
+
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/startpage/service-worker.js'), {scope: '/startpage/'}                        
+                });
+                } 
+        </script>
+    </head>
+    <body>
+        <button id="butInstall" aria-label="Install" hidden></button>
+        <form id="google" method="get" action="https://www.google.com/search" target="_blank">
+            <label>Google:
+            <input autofocus type="text" name="q" value="" size="35">
+            </label>
+            <button class="btn" type="submit">Search</button>
+        </form>
+
+        <nav class="menuCel">
+            <button class="menu btn btn-nav" type="button" onclick="menuTea()">Tea</button>
+            <button class="menu btn btn-nav" type="button" onclick="menuStudy()">Study</button>
+            <button class="menu btn btn-nav" type="button" onclick="menuProgramming()">Programming</button>
+            <button class="menu btn btn-nav" type="button" onclick="menuUtilities()">Utilities</button>
+            <button class="menu btn btn-nav" type="button" onclick="menuBooks()">Books</button>
+           
+        </nav>
+
+        <main>
+
+            <aside id="tea">
+                
+                
+            
+            </aside>
+
+            <aside id="study">
+
+                <h2>4chan</h2>
+
+                <a href="https://www.4chan.org" target="_blank" rel="noopener">/home/</a>
+                <a href="https://boards.4chan.org/wg/" target="_blank" rel="noopener">/wg/</a>
+                <a href="https://boards.4chan.org/b/" target="_blank" rel="noopener">/b/</a>
+                <a href="https://boards.4chan.org/ic/" target="_blank" rel="noopener">/ic/</a>
+                <a href="https://pucminas.instructure.com/" target="_blank" rel="noopener">/t/</a>
+                <a href="https://boards.4chan.org/t/" target="_blank" rel="noopener">/t/</a>
+                <a href="https://www.udemy.com/home/my-courses/learning/" target="_blank" rel="noopener">/gif/</a>
+
+
+            </aside>
+
+            <aside id="programming">
+
+                <h2>social</h2>
+               
+                <a href="mailto:" target="_blank" rel="noopener">email</a>
+                <a href="https://discordapp.com/app" target="_blank" rel="noopener">discord</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener">twitter</a>
+
+            </aside>
+
+            <aside id="utilities">
+
+                <h2>etc</h2>
+
+                <a href="https://netflix.com" target="_blank" rel="noopener">netflix</a>
+                <a href="https://reuters.com" target="_blank" rel="noopener">reuters</a>
+                <a href="https://github.com" target="_blank" rel="noopener">github</a>
+                <a href="https://open.spotify.com/browse/featured?_ga=2.152549360.859831711.1539799999-306076735.1539799999" target="_blank" rel="noopener">spotify</a>
+                <a href="https://soundcloud.com" target="_blank" rel="noopener">soundcloud</a>
+                <a href="https://www.youtube.com" target="_blank" rel="noopener">youtube</a>
+                <a href="https://am.i.mullvad.net" target="_blank" rel="noopener">am I mullvad</a>
+
+            </aside>
+                
+
+
+        </main>
+
+
+
+        </div> 
+
+        <div id="clearDesktop">
+            <button class="btn btn-nav" type="button" onclick="menuClearDesktop()">Clear</button>
+        </div>
+
+        <nav>
+            <button class="clearCel btn btn-nav" type="button" onclick="menuClearCel()">Clear</button>
+        </nav>
+        <script src="index.js"></script>
+        <script src="install.js"></script>
+    </body>
+
+</html>
